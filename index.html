@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sibeli Martinio Portfolio</title>
+<meta name="description" content="Sibeli Nogueira Martinio — Data Governance & Data Quality Specialist">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE work: a professional portfolio for hiring managers, confident and exact
+   IDEA an annual report of trusted data: findings first, one solid vermilion mass
+   PICTURE a data pipeline with quality gates (Data Quality by Design) crowned by the 99% result
+   COLOUR white ground, near-black ink, plum #4b2a7b as the one solid field; night plum on #110d18
+   TYPE Sofia Sans Condensed 800 for display, Instrument Sans for text
+   LAYOUT laptop: title band, full-width vermilion pipeline band, then cases in two columns; phone: stacked, pipeline turns vertical */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#110d18);--ink:light-dark(#141118,#f2eef8);--mute:light-dark(#5a5463,#b0a8bd);--red:#4b2a7b;--redink:light-dark(#5b3496,#bfa3ec);--line:light-dark(#e5e0ec,#2e2540);--soft:light-dark(#f7f3fc,#1a1424);--onred:#ffffff}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Instrument Sans",system-ui,sans-serif;overflow-x:clip}
+html[lang=en] .pt,html[lang=pt] .en{display:none}
+a{color:inherit}
+h1,h2,h3{font-family:"Sofia Sans Condensed","Arial Narrow",sans-serif;line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:clamp(44px,7vw,84px);font-weight:800}
+h2{font-size:clamp(32px,4.4vw,48px);font-weight:800;margin-bottom:24px}
+h3{font-size:24px;font-weight:600}
+p{margin:0 0 12px;max-width:68ch}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(36px,5vw,72px) max(5vw,16px)}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.brand{font-family:"Sofia Sans Condensed",sans-serif;font-weight:800;font-size:22px;text-decoration:none;margin-right:auto}
+.links{display:flex;gap:18px;flex-wrap:wrap}
+.links a{text-decoration:none;color:var(--mute);font-weight:500}
+.links a:hover{color:var(--ink)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{font:600 14px "Instrument Sans",sans-serif;border:0;background:none;color:var(--mute);padding:0 12px;min-height:40px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.flag{width:22px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15);flex:none}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.lang button:focus-visible,.btn:focus-visible{outline:3px solid var(--redink);outline-offset:2px}
+.hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:end}
+.role{font-size:clamp(19px,2vw,23px);font-weight:500;margin:18px 0 0;max-width:34ch}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
+.facts div{padding:14px 12px 0 0}
+.facts b{display:block;font-family:"Sofia Sans Condensed",sans-serif;font-size:clamp(34px,4vw,46px);font-weight:800;line-height:1}
+.facts span{color:var(--mute);font-size:14px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.pipe{background:var(--red);color:var(--onred)}
+.pipe .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.6fr);gap:40px;align-items:center}
+.big{font-family:"Sofia Sans Condensed",sans-serif;font-weight:800;font-size:clamp(96px,14vw,180px);line-height:.85;letter-spacing:-.04em}
+.big+p{font-weight:600;font-size:18px;margin-top:10px}
+.flow{list-style:none;margin:0;padding:0;display:flex;align-items:stretch}
+.flow li{flex:1;display:flex;align-items:center}
+.st{flex:1;min-width:0;overflow:hidden;background:#f8f4fd;color:#1e1430;border-radius:10px;padding:16px 14px;box-shadow:0 6px 0 rgba(10,4,20,.28)}
+.st b{display:block;font-family:"Sofia Sans Condensed",sans-serif;font-size:clamp(17px,1.45vw,21px);font-weight:800;line-height:1.1;hyphens:auto;overflow-wrap:break-word}
+.st small{display:block;font-size:13px;line-height:1.35;margin-top:4px;color:#5b3496;hyphens:auto}
+.gate{flex:none;width:44px;display:grid;place-items:center;position:relative}
+.gate::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:3px dashed var(--onred)}
+.gate i{position:relative;width:30px;height:30px;border-radius:50%;background:var(--onred);display:grid;place-items:center}
+.gate i::after{content:"";width:8px;height:14px;border:solid var(--red);border-width:0 3px 3px 0;transform:translateY(-2px) rotate(45deg)}
+.dims{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.dims span{border:2px solid var(--onred);border-radius:999px;padding:4px 14px;font-weight:600;font-size:14px}
+.cap{font-size:14px;margin-top:14px;font-weight:500}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.case{border:1px solid var(--line);border-radius:14px;padding:26px;background:var(--soft);display:flex;flex-direction:column}
+.case.wide{grid-column:1/-1}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.case .meta{color:var(--redink);font-weight:600;font-size:14px;margin-bottom:8px}
+.case h3{margin-bottom:12px}
+.case ul{margin:6px 0 14px;padding-left:20px}
+.case li{margin-bottom:6px}
+.result{margin-top:auto;border-top:1px solid var(--line);padding-top:14px;font-weight:600}
+.result em{font-style:normal;color:var(--redink);font-family:"Sofia Sans Condensed",sans-serif;font-size:30px;font-weight:800;margin-right:6px}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:48px}
+.lead{font-size:20px;font-weight:500}
+.time{position:relative;height:46px;border-radius:8px;overflow:hidden;margin:6px 0 10px;background:var(--line)}
+.time div{position:absolute;top:0;bottom:0;border-right:2px solid var(--bg);display:flex;align-items:center;padding:0 8px;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden}
+.axis{display:flex;justify-content:space-between;color:var(--mute);font-size:13px;margin-bottom:30px}
+.jobs{list-style:none;margin:0;padding:0}
+.jobs li{display:grid;grid-template-columns:minmax(120px,170px) minmax(0,1fr);gap:24px;padding:20px 0;border-top:1px solid var(--line)}
+.jobs .when{color:var(--mute);font-size:14px;font-variant-numeric:tabular-nums}
+.jobs h3{font-size:22px}
+.jobs .co{font-weight:600;color:var(--redink);margin:2px 0 8px}
+.jobs p{color:var(--mute)}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.skills h3{font-size:20px;padding-bottom:10px;border-bottom:2px solid var(--ink);margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:4px 10px;font-size:14px}
+.edu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
+.list{list-style:none;padding:0;margin:0}
+.list li{padding:12px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.list li>span:first-child{flex:1}
+.list li>span:last-child{flex:none;color:var(--mute);white-space:nowrap;font-size:14px;font-variant-numeric:tabular-nums}
+.contact{background:var(--ink);color:var(--bg)}
+.contact .wrap{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.contact .btn{border-color:var(--red);background:var(--red);color:var(--onred)}
+footer{padding:20px max(5vw,16px);color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
+@media(max-width:900px){.hero,.about,.edu{grid-template-columns:minmax(0,1fr);gap:28px}.pipe .wrap{grid-template-columns:minmax(0,1fr)}.skills{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:700px){.cases,.skills,.cols{grid-template-columns:minmax(0,1fr)}.links{display:none}.flow{flex-direction:column}.flow li{flex-direction:column;align-items:stretch}.gate{width:auto;height:40px}.gate::before{left:50%;right:auto;top:0;bottom:0;border-top:0;border-left:3px dashed var(--onred)}.jobs li{grid-template-columns:minmax(0,1fr);gap:4px}}
+@media(max-width:700px){.time div span{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Sibeli Martinio</a>
+    <div class="links">
+      <a href="#work"><span class="en">Work</span><span class="pt">Projetos</span></a>
+      <a href="#about"><span class="en">About</span><span class="pt">Sobre</span></a>
+      <a href="#experience"><span class="en">Experience</span><span class="pt">Experiência</span></a>
+      <a href="#skills"><span class="en">Skills</span><span class="pt">Competências</span></a>
+      <a href="#contact"><span class="en">Contact</span><span class="pt">Contato</span></a>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="b-en" type="button" data-set="en" aria-pressed="true" aria-label="English"><svg class="flag" viewBox="0 0 19 13" aria-hidden="true"><rect width="19" height="13" fill="#fff"/><g fill="#b22234"><rect width="19" height="1"/><rect y="2" width="19" height="1"/><rect y="4" width="19" height="1"/><rect y="6" width="19" height="1"/><rect y="8" width="19" height="1"/><rect y="10" width="19" height="1"/><rect y="12" width="19" height="1"/></g><rect width="8" height="7" fill="#3c3b6e"/></svg>EN</button>
+      <button id="b-pt" type="button" data-set="pt" aria-pressed="false" aria-label="Português"><svg class="flag" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#009c3b"/><path d="M10 1.6 18.2 7 10 12.4 1.8 7z" fill="#ffdf00"/><circle cx="10" cy="7" r="3.4" fill="#002776"/><path d="M6.7 6.3c2.2-.4 4.6 0 6.6 1.3" stroke="#fff" stroke-width=".7" fill="none"/></svg>PT</button>
+    </div>
+  </div>
+</nav>
+
+<header class="band" id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>Sibeli Nogueira Martinio</h1>
+      <p class="role en">Data Governance &amp; Data Quality Specialist. I make enterprise data trustworthy, from the source to the executive report.</p>
+      <p class="role pt">Especialista em Governança e Qualidade de Dados. Torno os dados corporativos confiáveis, da origem ao relatório executivo.</p>
+      <div class="btns">
+        <a class="btn solid" href="#work"><span class="en">See selected work</span><span class="pt">Ver projetos</span></a>
+        <a class="btn" href="https://www.linkedin.com/in/sibeli-nogueira-martinio-bb10b5ab/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="facts">
+      <div><b>8+</b><span class="en">years in data</span><span class="pt">anos em dados</span></div>
+      <div><b>99%</b><span class="en">data quality consistency index</span><span class="pt">índice de consistência de DQ</span></div>
+      <div><b>6</b><span class="en">quality dimensions monitored</span><span class="pt">dimensões de qualidade monitoradas</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="band pipe" aria-label="Data Quality by Design">
+  <div class="wrap">
+    <div>
+      <div class="big">99%</div>
+      <p class="en">data quality consistency index reached at RD Saúde</p>
+      <p class="pt">de índice de consistência de Data Quality alcançado na RD Saúde</p>
+    </div>
+    <div>
+      <ol class="flow">
+        <li><div class="st"><b><span class="en">Source</span><span class="pt">Origem</span></b><small class="en">Rules and owners defined at the start</small><small class="pt">Regras e responsáveis definidos na origem</small></div></li>
+        <li><span class="gate" aria-hidden="true"><i></i></span><div class="st"><b><span class="en">Ingestion</span><span class="pt">Ingestão</span></b><small class="en">Approval criteria for new pipelines</small><small class="pt">Critérios de aprovação para novos pipelines</small></div></li>
+        <li><span class="gate" aria-hidden="true"><i></i></span><div class="st"><b><span class="en">Processing</span><span class="pt">Processamento</span></b><small class="en">Automated validations and monitoring</small><small class="pt">Validações automáticas e monitoramento</small></div></li>
+        <li><span class="gate" aria-hidden="true"><i></i></span><div class="st"><b><span class="en">Refined layer</span><span class="pt">Camada Refined</span></b><small class="en">KPIs, SLAs and executive reporting</small><small class="pt">KPIs, SLAs e reports executivos</small></div></li>
+      </ol>
+      <div class="dims" aria-label="Six dimensions of data quality">
+        <span class="en">Completeness</span><span class="pt">Completude</span>
+        <span class="en">Accuracy</span><span class="pt">Precisão</span>
+        <span class="en">Consistency</span><span class="pt">Consistência</span>
+        <span class="en">Validity</span><span class="pt">Validade</span>
+        <span class="en">Timeliness</span><span class="pt">Atualidade</span>
+        <span class="en">Uniqueness</span><span class="pt">Unicidade</span>
+      </div>
+      <p class="cap en">Data Quality by Design: quality checks built into every stage of the data lifecycle, not added at the end.</p>
+      <p class="cap pt">Data Quality by Design: validações de qualidade embutidas em cada etapa do ciclo de vida dos dados, e não só no final.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="work">
+  <div class="wrap">
+    <h2><span class="en">Selected work</span><span class="pt">Projetos em destaque</span></h2>
+    <div class="cases">
+      <article class="case wide">
+        <div class="meta">TotalPass · 2026 – <span class="en">now</span><span class="pt">atual</span></div>
+        <h3><span class="en">Governance built into the corporate data platform</span><span class="pt">Governança integrada à plataforma de dados corporativa</span></h3>
+        <p class="en">Leading the governance side of the data platform rollout, with governed processes from ingestion to consumption that balance access, security and traceability.</p>
+        <p class="pt">Conduzo a governança na implementação da plataforma de dados, com processos governados da ingestão ao consumo, equilibrando acesso, segurança e rastreabilidade.</p>
+        <div class="cols">
+          <ul class="en"><li>Data governance policies, guidelines and lifecycle standards</li><li>Governed ingestion: criteria, controls and owners for every new data source</li><li>Access management and authorisation criteria aligned with privacy and compliance</li></ul>
+          <ul class="pt"><li>Políticas, diretrizes e padrões de Governança para o ciclo de vida dos dados</li><li>Ingestão governada: critérios, controles e responsáveis para cada nova fonte</li><li>Gestão de acessos e critérios de autorização alinhados a privacidade e conformidade</li></ul>
+          <ul class="en"><li>Governance platform on AWS SageMaker for data democratisation</li><li>Traceability, organisation and standardisation of data assets</li><li>Governance culture across Data Engineering and business areas</li></ul>
+          <ul class="pt"><li>Plataforma de governança no AWS SageMaker para democratização dos dados</li><li>Rastreabilidade, organização e padronização dos ativos de dados</li><li>Cultura de governança entre Engenharia de Dados e áreas de negócio</li></ul>
+        </div>
+        <div class="result"><span class="en">Governance processes integrated into the platform, stronger access and ingestion controls, and governed data democratisation</span><span class="pt">Processos de Governança integrados à plataforma, controles de acesso e ingestão fortalecidos e democratização dos dados com governança</span></div>
+      </article>
+      <article class="case">
+        <div class="meta">RD Saúde · 2023–2026</div>
+        <h3><span class="en">Data Quality by Design framework</span><span class="pt">Framework de Data Quality by Design</span></h3>
+        <p class="en">Data quality problems were found late, after reaching reports. I led the Data Quality front inside the Data Engineering team to move quality to the start of the lifecycle.</p>
+        <p class="pt">Problemas de qualidade eram descobertos tarde, já nos relatórios. Liderei a frente de Data Quality dentro do time de Engenharia de Dados para levar a qualidade ao início do ciclo de vida.</p>
+        <ul class="en"><li>Quality rules and validations from the source through ingestion and processing</li><li>Approval criteria for every new integration and pipeline</li><li>Policies, standards and guidelines shared across teams</li></ul>
+        <ul class="pt"><li>Regras e validações de qualidade da origem à ingestão e ao processamento</li><li>Critérios de aprovação para toda nova integração e pipeline</li><li>Políticas, padrões e diretrizes compartilhados entre os times</li></ul>
+        <div class="result"><em>99%</em><span class="en">data quality consistency index</span><span class="pt">de índice de consistência de DQ</span></div>
+      </article>
+      <article class="case">
+        <div class="meta">RD Saúde · AWS Redshift</div>
+        <h3><span class="en">Enterprise data quality tool rollout</span><span class="pt">Implantação de ferramenta corporativa de Data Quality</span></h3>
+        <p class="en">Led the project that implemented a specialised data quality tool across the enterprise data environment and the Redshift Refined layer.</p>
+        <p class="pt">Liderei o projeto que implantou uma ferramenta especializada de qualidade de dados em todo o ambiente corporativo e na camada Refined do Redshift.</p>
+        <ul class="en"><li>Monitoring across the six dimensions of data quality</li><li>KPIs, quality metrics and SLA tracking</li><li>Executive reports for Data Analytics and IT leadership</li></ul>
+        <ul class="pt"><li>Monitoramento das seis dimensões de qualidade de dados</li><li>KPIs, métricas de qualidade e acompanhamento de SLAs</li><li>Reports executivos para a liderança de Analytics e TI</li></ul>
+        <div class="result"><em>6</em><span class="en">dimensions monitored enterprise-wide</span><span class="pt">dimensões monitoradas em toda a empresa</span></div>
+      </article>
+      <article class="case">
+        <div class="meta">SulAmérica · 2021–2023</div>
+        <h3><span class="en">Metadata, catalog and business glossary</span><span class="pt">Metadados, catálogo e glossário de negócios</span></h3>
+        <p class="en">Structured governance around metadata, data quality and data security, working directly with business areas, Data Owners and Data Stewards.</p>
+        <p class="pt">Estruturei a governança com foco em metadados, qualidade e segurança de dados, atuando junto às áreas de negócio, Data Owners e Data Stewards.</p>
+        <ul class="en"><li>Data catalog and metadata management with Informatica EDC</li><li>Business glossary, term mapping and risk mapping</li><li>Tagging of personal and sensitive data (LGPD)</li></ul>
+        <ul class="pt"><li>Catálogo de dados e gestão de metadados com Informatica EDC</li><li>Glossário de negócios, mapeamento de termos e de riscos</li><li>Tagueamento de dados pessoais e sensíveis (LGPD)</li></ul>
+        <div class="result"><span class="en">Policies, processes and procedures implemented</span><span class="pt">Políticas, processos e procedimentos implantados</span></div>
+      </article>
+      <article class="case">
+        <div class="meta">Boa Vista SCPC · 2019–2021</div>
+        <h3><span class="en">Data lifecycle and LGPD compliance</span><span class="pt">Ciclo de vida dos dados e conformidade com a LGPD</span></h3>
+        <p class="en">In a credit bureau, governed the collection, processing and quality of large data sets while delivering analysis and management reporting.</p>
+        <p class="pt">Em um bureau de crédito, governei a coleta, o processamento e a qualidade de grandes volumes de dados, entregando análises e relatórios gerenciais.</p>
+        <ul class="en"><li>Data lifecycle management and incident management</li><li>Active role in audits and in the LGPD certification</li><li>SQL, ETL, dashboards and process flows on GCP</li></ul>
+        <ul class="pt"><li>Gestão do ciclo de vida dos dados e de incidentes</li><li>Participação ativa em auditorias e na certificação LGPD</li><li>SQL, ETL, dashboards e fluxos de processo na GCP</li></ul>
+        <div class="result"><span class="en">LGPD certification supported</span><span class="pt">Apoio à certificação LGPD</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="about" style="background:var(--soft)">
+  <div class="wrap about">
+    <h2><span class="en">Where business, analytics and data engineering meet</span><span class="pt">Onde negócio, analytics e engenharia de dados se encontram</span></h2>
+    <div>
+      <p class="lead en">I work at the intersection of business, analytics and data engineering, leading data quality initiatives with scalable governance frameworks and a focus on continuous improvement.</p>
+      <p class="lead pt">Atuo na interseção entre negócio, analytics e engenharia de dados, liderando iniciativas de qualidade com frameworks de governança escaláveis e foco em melhoria contínua.</p>
+      <p class="en">My path into governance started long before the title: owning ISO 9000 for a sales area, writing SQL on an Oracle ERP, mapping and standardising processes at Accenture and managing customer and supplier master data. Together with a background in Business Administration and Project Management, that shapes how I run governance: clear rules, measurable results and reports leadership can act on. A professional English immersion in Canada prepared me to work with international, remote teams.</p>
+      <p class="pt">Meu caminho na governança começou antes do cargo: responsável pela ISO 9000 de uma área comercial, consultas SQL em ERP Oracle, mapeamento e padronização de processos na Accenture e gestão de dados mestres de clientes e fornecedores. Somado à formação em Administração e Gestão de Projetos, isso define como conduzo a governança: regras claras, resultados mensuráveis e relatórios que a liderança consegue usar. Uma imersão profissional em inglês no Canadá me preparou para trabalhar com times internacionais e remotos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="experience">
+  <div class="wrap">
+    <h2><span class="en">Experience</span><span class="pt">Experiência</span></h2>
+    <div class="time" id="time" aria-hidden="true"></div>
+    <div class="axis"><span>2008</span><span>2013</span><span>2018</span><span>2023</span><span>2026</span></div>
+    <ul class="jobs" id="jobs"></ul>
+  </div>
+</section>
+
+<section class="band" id="skills" style="background:var(--soft)">
+  <div class="wrap">
+    <h2><span class="en">Skills and tools</span><span class="pt">Competências e ferramentas</span></h2>
+    <div class="skills">
+      <div><h3><span class="en">Governance</span><span class="pt">Governança</span></h3><div class="tags"><span>Data Quality Management</span><span>Data Stewardship</span><span>Data Governance</span><span>Metadata management</span><span>Business glossary</span><span>Data catalog</span><span>LGPD / Data privacy</span><span>Business rules</span><span>Access management</span><span>Data ingestion governance</span><span>Data democratization</span></div></div>
+      <div><h3><span class="en">Methods</span><span class="pt">Métodos</span></h3><div class="tags"><span>DQ metrics, KPIs &amp; SLAs</span><span>Executive reporting</span><span>Scrum</span><span>PDCA</span><span>Management 3.0</span><span>Demand prioritization</span><span>Team leadership</span><span>Data-driven culture</span></div></div>
+      <div><h3><span class="en">Tools</span><span class="pt">Ferramentas</span></h3><div class="tags"><span>AWS SageMaker</span><span>AWS Redshift</span><span>Informatica EDC</span><span>Google Cloud</span><span>SQL</span><span>Power BI</span><span>Jira</span><span>Confluence</span><span>GitLab</span><span>BusinessMap</span><span>SharePoint</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap edu">
+    <div>
+      <h2><span class="en">Education</span><span class="pt">Formação</span></h2>
+      <ul class="list">
+        <li><span><span class="en">Specialization, Strategic Data Management and Analytics · PUC Minas</span><span class="pt">Especialização em Gestão e Análise Estratégica de Dados · PUC Minas</span></span><span>2022–2023</span></li>
+        <li><span><span class="en">Postgraduate degree, Project Management</span><span class="pt">Pós-graduação em Gestão de Projetos</span></span><span></span></li>
+        <li><span><span class="en">Bachelor's degree, Business Administration</span><span class="pt">Bacharelado em Administração</span></span><span></span></li>
+        <li><span><span class="en">Professional English immersion · Bayswater, Canada</span><span class="pt">Imersão profissional em inglês · Bayswater, Canadá</span></span><span>2025</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2><span class="en">Courses and events</span><span class="pt">Cursos e eventos</span></h2>
+      <ul class="list">
+        <li><span>Data Quality Masterclass · Udemy</span><span>2024</span></li>
+        <li><span>Data Governance Fundamentals · Udemy</span><span>2024</span></li>
+        <li><span>AWS AI Practitioner Discovery Day</span><span>2024</span></li>
+        <li><span>Management 3.0 · Udemy</span><span>2024</span></li>
+        <li><span>Data Storytelling &amp; Visualization · Udemy</span><span>2023</span></li>
+        <li><span>DAMA Brasil Summit · AWS Summit São Paulo</span><span>2025–2026</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2 class="en">Let's make your data trustworthy</h2>
+      <h2 class="pt">Vamos tornar seus dados confiáveis</h2>
+      <p class="en">Open to remote opportunities. Portuguese (native) and English.</p>
+      <p class="pt">Aberta a oportunidades remotas. Português (nativo) e inglês.</p>
+    </div>
+    <a class="btn" href="https://www.linkedin.com/in/sibeli-nogueira-martinio-bb10b5ab/" target="_blank" rel="noopener"><span class="en">Connect on LinkedIn</span><span class="pt">Conectar no LinkedIn</span></a>
+  </div>
+</section>
+<footer><div class="wrap">© 2026 Sibeli Nogueira Martinio · São Paulo, Brazil</div></footer>
+
+<script>
+{
+  const jobs=[
+    {s:2026.17,e:2026.92,y:"2026 – now",ye:"2026 – atual",t:"Data Governance Specialist",tp:"Especialista em Governança de Dados",c:"TotalPass Brasil",en:"Leads data governance for the corporate data platform: policies and processes for the data lifecycle, governed ingestion of new sources, access management with privacy and compliance controls, and the AWS SageMaker governance platform for data democratisation.",pt:"Lidera a governança da plataforma de dados corporativa: políticas e processos para o ciclo de vida dos dados, ingestão governada de novas fontes, gestão de acessos com controles de privacidade e conformidade, e a plataforma de governança no AWS SageMaker para democratização dos dados.",col:"var(--red)"},
+    {s:2023.33,e:2026.08,y:"2023 – 2026",ye:"2023 – 2026",t:"Senior Data Governance Analyst",tp:"Analista Sênior de Governança de Dados",c:"RD Saúde",en:"Led Governance and Data Quality inside Data Engineering: Data Quality by Design framework, enterprise DQ tool, KPIs and executive reporting. Consistency index raised to 99%.",pt:"Liderou Governança e Data Quality dentro da Engenharia de Dados: framework de Data Quality by Design, ferramenta corporativa de DQ, KPIs e reports executivos. Índice de consistência elevado a 99%.",col:"color-mix(in srgb,var(--red) 80%,var(--ink))"},
+    {s:2021.92,e:2023.33,y:"2021 – 2023",ye:"2021 – 2023",t:"Data Governance Analyst",tp:"Analista de Governança de Dados",c:"SulAmérica",en:"Policies and processes for metadata, data quality and security; Informatica EDC catalog; business glossary; sensitive data tagging; Data Owners and Stewards.",pt:"Políticas e processos de metadados, qualidade e segurança; catálogo Informatica EDC; glossário de negócios; tagueamento de dados sensíveis; Data Owners e Stewards.",col:"color-mix(in srgb,var(--red) 60%,var(--ink))"},
+    {s:2019.5,e:2021.75,y:"2019 – 2021",ye:"2019 – 2021",t:"Data Analyst",tp:"Analista de Dados",c:"Boa Vista SCPC",en:"Data lifecycle governance, SQL/ETL on large data sets, dashboards, incident management, audits and LGPD certification.",pt:"Governança do ciclo de vida dos dados, SQL/ETL em grandes volumes, dashboards, gestão de incidentes, auditorias e certificação LGPD.",col:"color-mix(in srgb,var(--red) 45%,var(--ink))"},
+    {s:2018.58,e:2019.5,y:"2018 – 2019",ye:"2018 – 2019",t:"Sales Analyst",tp:"Analista de Vendas",c:"Dalton Chemitac",en:"Customer and supplier master data management, ABC customer portfolio analysis, KPIs, and process improvements in routing and management reporting.",pt:"Gestão de cadastros de clientes e fornecedores (dados mestres), carteira de clientes por Curva ABC, indicadores e melhorias de processos em roteirização e relatórios gerenciais.",col:"color-mix(in srgb,var(--red) 30%,var(--ink))"},
+    {s:2015.33,e:2018.08,y:"2015 – 2018",ye:"2015 – 2018",t:"Business Management Analyst",tp:"Analista de Gestão de Negócios",c:"Accenture Brasil",en:"Team focal point for process mapping and standardisation (Bizagi BPM). KPIs, dashboards and SLA control; contract management on SAP; bridge between Legal, Sales and Finance. Took part in system acceptance testing and the Business Excellence team certification.",pt:"Ponto focal do time no mapeamento e padronização de processos (Bizagi BPM). Indicadores, dashboards e controle de SLAs; gestão de contratos no SAP; interface entre Jurídico, Comercial e Financeiro. Participou da homologação de sistema e da certificação Business Excellence.",col:"color-mix(in srgb,var(--ink) 55%,var(--bg))",lt:1},
+    {s:2008.08,e:2015.33,y:"2008 – 2015",ye:"2008 – 2015",t:"Sales Analyst · Administrative Sales Assistant",tp:"Analista de Vendas · Assistente Administrativa de Vendas",c:"Promax Bardahl",en:"Wrote SQL queries and management reports on the Oracle ERP (PL/SQL) to support the board's decisions. Owned ISO 9000 for the sales area: indicators, customer satisfaction surveys and monthly process reviews.",pt:"Criou consultas SQL e relatórios gerenciais no ERP Oracle (PL/SQL) para apoiar decisões da diretoria. Responsável pela ISO 9000 do setor comercial: indicadores, pesquisas de satisfação e reuniões mensais de processos.",col:"color-mix(in srgb,var(--ink) 30%,var(--bg))",lt:1}
+  ];
+  const T0=2008,T1=2026.92;
+  const tl=document.getElementById("time");
+  const pc=v=>((v-T0)/(T1-T0)*100).toFixed(2);
+  tl.innerHTML=jobs.map(j=>`<div style="left:${pc(j.s)}%;width:${(pc(j.e)-pc(j.s)).toFixed(2)}%;background:${j.col};color:${j.lt?'var(--ink)':'#fff'}" title="${j.c}"><span>${j.c.replace(' Brasil','').replace(' SCPC','')}</span></div>`).join("");
+  document.getElementById("jobs").innerHTML=jobs.map(j=>`<li><div class="when"><span class="en">${j.y}</span><span class="pt">${j.ye.replace('now','atual')}</span></div><div><h3><span class="en">${j.t}</span><span class="pt">${j.tp}</span></h3><div class="co">${j.c}</div><p class="en">${j.en}</p><p class="pt">${j.pt}</p></div></li>`).join("");
+  const setLang=l=>{document.documentElement.lang=l;for(const b of document.querySelectorAll(".lang button"))b.setAttribute("aria-pressed",b.dataset.set===l);try{localStorage.setItem("lang",l)}catch(e){}};
+  for(const b of document.querySelectorAll(".lang button"))b.addEventListener("click",()=>setLang(b.dataset.set));
+  let saved=null;try{saved=localStorage.getItem("lang")}catch(e){}
+  setLang(saved||((navigator.language||"").startsWith("pt")?"pt":"en"));
+}
+</script>
+</body>
+</html>
